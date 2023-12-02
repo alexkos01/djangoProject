@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('login/', views.login),
-    path('author/', views.author)
+    path('author/', views.author),
+    path('info/', views.info)
 ]

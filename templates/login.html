@@ -10,24 +10,32 @@
             background-image: url(https://timeweb.com/media/articles/0001/08/thumb_7309_articles_standart.jpeg);
             background-repeat: no-repeat;
             background-position: center;
-             background-size: cover;
+            background-size: cover;
         }
 
         .mb-3 {
             margin-top: 20%;
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-        .mb-3 input{
-            margin-left: 5px;
+
+        .mb-3 input {
+            display: block;
+            margin-bottom: 10px;
             border-radius: 10px;
+
         }
+
         .sub {
             background-color: grey;
         }
+
         .sub:hover {
             background-color: darkgreen;
         }
+
         .sub:active {
             background-color: blue;
         }
@@ -35,10 +43,10 @@
 </head>
 <body>
 <form class="mb-3" action="" method="post">
-    <input name="login" value="login">
-    <input type="password" name="password" value="password">
-    <input type="password" name="rpassword" value="password">
-    <input type="email" name="email" value="email">
+    <input name="login" placeholder="login">
+    <input type="password" name="password" placeholder="password">
+    <input type="password" name="rpassword" placeholder="password">
+    <input type="email" name="email" placeholder="email">
     <input class="sub" type="submit" value="зарегистрироваться">
     {{ err }}
 </form>
@@ -62,6 +70,7 @@
             return false
         }
     }
+
 </script>
 </body>
 </html>

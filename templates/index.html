@@ -10,11 +10,13 @@
             background-image: url(https://timeweb.com/media/articles/0001/08/thumb_7309_articles_standart.jpeg);
             background-repeat: no-repeat;
             background-position: center;
-             background-size: cover;
+            background-size: cover;
         }
+
         .div {
             display: flex;
             justify-content: center;
+            align-items: center;
             margin-top: 20%;
         }
 
@@ -25,6 +27,7 @@
             border-radius: 15px;
             font-size: 20px;
             font-weight: bold;
+            margin-right: 15px;
         }
 
         .div a input:hover {
@@ -39,13 +42,43 @@
             justify-content: center;
             color: red;
         }
+        button {
+            background-color: ghostwhite;
+            border-radius: 7px;
+        }
+        button a {
+            text-decoration: none;
+            color: black;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        button:active {
+            background-color: blue;
+        }
+        .div1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
 <div class="div">
-    <a href="login/"><input type="button" value='регистрация'></a>
-    <a href="author/"><input type="button" value='авторизация'></a>
+    <a href="/login/"><input type="button" value='регистрация'></a>
+    <a href="/author/"><input type="button" value='авторизация'></a>
 </div>
+<div class="div1">
+<button id='start_bot'><a href="https://web.telegram.org/k/#@alexkos01_bot">регистрация через бот</a></button>
+    </div>
 <p>{{ err }}</p>
+<script>
+    start_bot.onclick = () => {
+        xhr = new XMLHttpRequest()
+        xhr.open('post', 'http://127.0.0.1:8000/')
+        xhr.send()
+    }
+</script>
 </body>
 </html>
