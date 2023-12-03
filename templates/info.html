@@ -2,19 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>info</title>
     <style>
-        h3{
+         body {
+            background-image: url(https://timeweb.com/media/articles/0001/08/thumb_7309_articles_standart.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+         p {
+             display: flex;
+             justify-content: center;
+             color: orange;
+         }
+         div {
+             margin-top: 20%;
+         }
+        h2{
             display: flex;
             justify-content: center;
-            align-items: center;
+        }
+        a {
+            color: white;
+        }
+        a:hover {
+            color: grey;
+        }
+        a:active {
+            color: cornflowerblue;
         }
     </style>
 </head>
 <body>
- <h3>{{ user }}</h3>
+ <p>{{ user }}</p>
+<div>
+ <h2><a href="https://www.google.ru/">Google</a></h2>
+ <h2><a href="https://www.youtube.com/">Youtube</a></h2>
+ <h2><a href="https://www.onliner.by/">Onliner</a></h2>
+    </div>
 </body>
 </html>

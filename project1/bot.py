@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher.storage import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup, User
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup, CallbackQuery
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker, declarative_base
 
@@ -47,10 +47,24 @@ class States(StatesGroup):
 class DataSales:
     dt_user = {}
 
+user_but = ReplyKeyboardMarkup(resize_keyboard=True)
+user_but.add(KeyboardButton(text='регистрация'), KeyboardButton(text='выход'))
 
 @dp.message_handler(commands='start')
+async def cmd_end(mes: types.Message):
+    await mes.reply(f'{mes.from_user.first_name}, воспользуйтесь кнопками для дальнейших действий', reply_markup=user_but)
+
+
+@dp.message_handler(text='выход')
+async def exit_bot(mes: types.Message):
+    user_inl1 = InlineKeyboardMarkup()
+    user_inl1.add(InlineKeyboardButton('вернуться на сайт', url='http://127.0.0.1:8000/info/'))
+    await mes.reply('выход', reply_markup=user_inl1)
+
+
+
+@dp.message_handler(text='регистрация')
 async def cmd_start(mes: types.Message):
-    await mes.answer(f'{mes.from_user.first_name}, пройдите регистрацию на сайте')
     await mes.answer('введите логин')
     await States.login.set()
 
@@ -83,9 +97,9 @@ async def save_password(mes: types.Message, state: FSMContext):
         DataSales.dt_user['password'] = mes.text
     await state.finish()
     await mes.answer('регистрация прошла успешна')
-    await mes.answer('http://127.0.0.1:8000/')
     session.add(Users(DataSales.dt_user["login"], DataSales.dt_user["password"], DataSales.dt_user["email"]))
     session.commit()
+
 
 
 async def main():
