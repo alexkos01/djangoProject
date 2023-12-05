@@ -27,7 +27,6 @@ def login(request):
         reg.password = request.POST['password']
         reg.login = request.POST['login']
         reg.save()
-        # return HttpResponse(f'Пользователь с Email: {reg.email} успешно зарегистрирован!')
         return render(request, 'info.html', {'user': f'Пользователь с логином: {reg.login} успешно зарегистрирован!'})
     return render(request, 'login.html')
 

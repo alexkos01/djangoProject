@@ -8,6 +8,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup, CallbackQuery
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker, declarative_base
+import re
 
 logging.basicConfig(level=logging.INFO)
 
@@ -19,6 +20,15 @@ lock = Lock()
 
 engine = create_engine('sqlite:///db.sqlite3', echo=True)
 Base = declarative_base()
+
+regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
+
+
+def isValid(email):
+    if re.fullmatch(regex, email):
+        return True
+    else:
+        return False
 
 
 class Users(Base):
@@ -47,12 +57,15 @@ class States(StatesGroup):
 class DataSales:
     dt_user = {}
 
+
 user_but = ReplyKeyboardMarkup(resize_keyboard=True)
 user_but.add(KeyboardButton(text='регистрация'), KeyboardButton(text='выход'))
 
+
 @dp.message_handler(commands='start')
 async def cmd_end(mes: types.Message):
-    await mes.reply(f'{mes.from_user.first_name}, воспользуйтесь кнопками для дальнейших действий', reply_markup=user_but)
+    await mes.reply(f'{mes.from_user.first_name}, воспользуйтесь кнопками для дальнейших действий',
+                    reply_markup=user_but)
 
 
 @dp.message_handler(text='выход')
@@ -60,7 +73,6 @@ async def exit_bot(mes: types.Message):
     user_inl1 = InlineKeyboardMarkup()
     user_inl1.add(InlineKeyboardButton('вернуться на сайт', url='http://127.0.0.1:8000/info/'))
     await mes.reply('выход', reply_markup=user_inl1)
-
 
 
 @dp.message_handler(text='регистрация')
@@ -81,8 +93,8 @@ async def save_login(mes: types.Message, state: FSMContext):
 
 @dp.message_handler(state=States.email)
 async def save_email(mes: types.Message, state: FSMContext):
-    if '@' not in mes.text:
-        return await mes.answer('в email отсутсвует @')
+    if not isValid(mes.text):
+        return await mes.answer('email введен не корректно')
     async with lock:
         DataSales.dt_user['email'] = mes.text
     await mes.answer('введите пароль')
@@ -99,7 +111,6 @@ async def save_password(mes: types.Message, state: FSMContext):
     await mes.answer('регистрация прошла успешна')
     session.add(Users(DataSales.dt_user["login"], DataSales.dt_user["password"], DataSales.dt_user["email"]))
     session.commit()
-
 
 
 async def main():
