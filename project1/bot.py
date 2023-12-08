@@ -13,7 +13,7 @@ import re
 logging.basicConfig(level=logging.INFO)
 
 storage = MemoryStorage()
-bot = Bot(token="")
+bot = Bot(token="6781746793:AAFUBB_PE7kuic9hTh5DNfXSU7mrN5BMa5A")
 dp = Dispatcher(bot=bot, storage=MemoryStorage())
 
 lock = Lock()

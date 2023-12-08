@@ -45,3 +45,7 @@ def author(request):
 @csrf_exempt
 def info(request):
     return render(request, 'info.html')
+
+
+def news(request):
+    return None
