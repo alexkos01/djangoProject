@@ -26,6 +26,7 @@ def login(request):
         reg.email = request.POST['email']
         reg.password = request.POST['password']
         reg.login = request.POST['login']
+        reg.img = request.POST['img']
         reg.save()
         return render(request, 'info.html', {'user': f'Пользователь с логином: {reg.login} успешно зарегистрирован!'})
     return render(request, 'login.html')
@@ -47,5 +48,3 @@ def info(request):
     return render(request, 'info.html')
 
 
-def news(request):
-    return None

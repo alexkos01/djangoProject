@@ -10,7 +10,4 @@ urlpatterns = [
     path('login/', views.login),
     path('author/', views.author),
     path('info/', views.info),
-    path('news/', include('news.urls')),
-    path('todo/', include('todo.urls')),
-    path('todo_reg/', include('todo.urls_reg'))
 ]
