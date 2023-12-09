@@ -42,11 +42,12 @@
     </style>
 </head>
 <body>
-<form class="mb-3" action="" method="post">
+<form class="mb-3" action="" method="post" enctype="multipart/form-data">
     <input name="login" placeholder="login">
     <input type="password" name="password" placeholder="password">
     <input type="password" name="rpassword" placeholder="password">
     <input type="email" name="email" placeholder="email">
+    <input type="file" name="img">
     <input class="sub" type="submit" value="зарегистрироваться">
     {{ err }}
 </form>

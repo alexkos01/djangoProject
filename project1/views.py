@@ -3,10 +3,16 @@ import asyncio
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-
+from PIL import Image
 from project1.bot import main
 from project1.models import ModelReg
 
+def edit_img(img):
+    user_img = Image.open(img)
+    re_img = user_img.rotate(45)
+    re_img.show()
+    re_img.save(f'media/imgs/{img}')
+    return f'media/imgs/{img}'
 
 @csrf_exempt
 def index(request):
@@ -26,7 +32,7 @@ def login(request):
         reg.email = request.POST['email']
         reg.password = request.POST['password']
         reg.login = request.POST['login']
-        reg.img = request.POST['img']
+        reg.img = edit_img(request.FILES['img'])
         reg.save()
         return render(request, 'info.html', {'user': f'Пользователь с логином: {reg.login} успешно зарегистрирован!'})
     return render(request, 'login.html')

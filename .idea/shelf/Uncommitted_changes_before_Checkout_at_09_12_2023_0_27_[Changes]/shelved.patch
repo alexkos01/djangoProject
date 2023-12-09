@@ -1,0 +1,3 @@
+diff --git a/djangoProject/.gitignore b/.gitignore
+rename from djangoProject/.gitignore
+rename to .gitignore

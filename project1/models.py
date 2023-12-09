@@ -6,3 +6,6 @@ class ModelReg(models.Model):
     password = models.CharField(max_length=10)
     email = models.CharField(max_length=10)
     img = models.ImageField(upload_to='imgs', default='')
+
+    def __str__(self):
+        return self.login
