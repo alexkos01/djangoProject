@@ -1,11 +1,15 @@
 import asyncio
 import logging
+import time
 from asyncio import Lock
+
+from PIL import Image
 from aiogram import Bot, Dispatcher, types
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher.storage import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup, CallbackQuery
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup, \
+    CallbackQuery, InputFile
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker, declarative_base
 import re
@@ -37,11 +41,13 @@ class Users(Base):
     login = Column(String)
     password = Column(String)
     email = Column(String)
+    img = Column(String)
 
-    def __init__(self, a, b, c):
+    def __init__(self, a, b, c, d):
         self.login = a
         self.password = b
         self.email = c
+        self.img = d
 
 
 Session = sessionmaker(bind=engine)
@@ -51,6 +57,7 @@ session = Session()
 class States(StatesGroup):
     login = State()
     email = State()
+    img = State()
     password = State()
 
 
@@ -107,9 +114,21 @@ async def save_password(mes: types.Message, state: FSMContext):
         return await mes.answer('пароль не может быть таким коротким')
     async with lock:
         DataSales.dt_user['password'] = mes.text
+    await mes.answer('добавьте фото на аватар')
+    await States.img.set()
+
+@dp.message_handler(content_types='photo', state=States.img)
+async def get_img(mes: types.Message, state: FSMContext):
+    await mes.photo[-1].download('media/imgs/img1.png')
+    time.sleep(1)
+    img = Image.open('media/imgs/img1.png')
+    img.show()
+    async with lock:
+        DataSales.dt_user['img'] = 'media/imgs/img1.png'
     await state.finish()
     await mes.answer('регистрация прошла успешна')
-    session.add(Users(DataSales.dt_user["login"], DataSales.dt_user["password"], DataSales.dt_user["email"]))
+    session.add(Users(DataSales.dt_user["login"], DataSales.dt_user["password"],
+                      DataSales.dt_user["img"], DataSales.dt_user["email"]))
     session.commit()
 
 

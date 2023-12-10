@@ -1,0 +1,27 @@
+         body {
+            background-image: url(https://timeweb.com/media/articles/0001/08/thumb_7309_articles_standart.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+             background-size: cover;
+        }
+        .mb-3 {
+            margin-top: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .mb-3 input{
+            margin-left: 5px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+         .sub {
+            background-color: grey;
+        }
+        .sub:hover {
+            background-color: darkgreen;
+        }
+        .sub:active {
+            background-color: blue;
+        }
