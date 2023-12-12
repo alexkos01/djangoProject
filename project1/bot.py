@@ -114,7 +114,7 @@ async def save_password(mes: types.Message, state: FSMContext):
         return await mes.answer('пароль не может быть таким коротким')
     async with lock:
         DataSales.dt_user['password'] = mes.text
-    await mes.answer('добавьте фото на аватар')
+    await mes.answer('добавьте фото')
     await States.img.set()
 
 @dp.message_handler(content_types='photo', state=States.img)
@@ -123,15 +123,17 @@ async def get_img(mes: types.Message, state: FSMContext):
     time.sleep(1)
     img = Image.open('media/imgs/img1.png')
     img.show()
+    img.thumbnail(size=(165, 165))
+    img.save('media/imgs/img1.png')
     async with lock:
         DataSales.dt_user['img'] = 'media/imgs/img1.png'
     await state.finish()
     await mes.answer('регистрация прошла успешна')
     session.add(Users(DataSales.dt_user["login"], DataSales.dt_user["password"],
-                      DataSales.dt_user["img"], DataSales.dt_user["email"]))
+                      DataSales.dt_user["email"], DataSales.dt_user["img"]))
     session.commit()
 
 
-async def main():
+async def mainn():
     Base.metadata.create_all(engine)
     await dp.start_polling(bot)

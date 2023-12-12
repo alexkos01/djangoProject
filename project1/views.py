@@ -1,27 +1,31 @@
 import asyncio
-
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from PIL import Image
-from project1.bot import main
 from project1.models import ModelReg
+from project1.bot import mainn
+from PIL import Image, ImageDraw
+import numpy as np
 
 
 def edit_img(img):
-    user_img = Image.open(img)
-    # re_img = user_img.rotate(45)
-    # re_img.show()
-    # re_img.save(f'media/imgs/{img}')
-    user_img.thumbnail(size=(165, 165))
-    user_img.show()
-    user_img.save(f'media/imgs/{img}')
+    orig_img = Image.open(img)
+    orig_img.thumbnail(size=(165, 165))
+    height, width = orig_img.size
+    npImage = np.array(orig_img)
+    new_img = Image.new('L', orig_img.size, 0)
+    draw = ImageDraw.Draw(new_img)
+    draw.pieslice([0, 0, height, width], 0, 360, fill=255)
+    np_new = np.array(new_img)
+    npImage = np.dstack((npImage, np_new))
+    final_img = Image.fromarray(npImage)
+    final_img.save(f'media/imgs/{img}', 'png')
     return f'media/imgs/{img}'
+
 
 @csrf_exempt
 def main(request):
     if request.method == 'POST':
-        asyncio.run(main())
+        asyncio.run(mainn())
     return render(request, 'main.html')
 
 
@@ -56,5 +60,4 @@ def authorize(request):
 @csrf_exempt
 def user_account(request):
     return render(request, 'user_account.html')
-
 
