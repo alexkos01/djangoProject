@@ -5,24 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f314d54-094b-4cc2-91d6-97cbe7d5117f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project1/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project1/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project1/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/imgs/img10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/imgs/img11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/imgs/img4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/imgs/img_test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/imgs/new_img_test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/imgs/r1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/imgs/img.png.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/imgs/img1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/imgs/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/imgs/img125.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/imgs/img88.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/forms.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_account.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +73,17 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\s_h_u\PycharmProjects\djangoProject\static\img" />
       <recent name="C:\Users\s_h_u\PycharmProjects\djangoProject\media\imgs" />
       <recent name="C:\Users\s_h_u\PycharmProjects\djangoProject" />
       <recent name="C:\Users\s_h_u\PycharmProjects\djangoProject\djangoProject" />
       <recent name="C:\Users\s_h_u\PycharmProjects\djangoProject\todo\static" />
-      <recent name="C:\Users\s_h_u\PycharmProjects\djangoProject\media" />
     </key>
   </component>
   <component name="RunManager">
@@ -169,7 +166,10 @@
       <workItem from="1702322073773" duration="2398000" />
       <workItem from="1702326985158" duration="1460000" />
       <workItem from="1702365111539" duration="19000" />
-      <workItem from="1702413215119" duration="1913000" />
+      <workItem from="1702413215119" duration="2235000" />
+      <workItem from="1702456584927" duration="209000" />
+      <workItem from="1702462838558" duration="2460000" />
+      <workItem from="1702468197910" duration="13291000" />
     </task>
     <servers />
   </component>

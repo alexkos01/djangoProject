@@ -42,7 +42,8 @@ def reg(request):
         regg.login = request.POST['login']
         regg.img = edit_img(request.FILES['img'])
         regg.save()
-        return render(request, 'user_account.html', {'user': f'Пользователь с логином: {regg.login} успешно зарегистрирован!'})
+        return render(request, 'user_account.html', {'user': f'Пользователь с логином: {regg.login} успешно зарегистрирован!',
+                                                     'img': f'{regg.img}'})
     return render(request, 'reg.html')
 
 
