@@ -1,4 +1,4 @@
-import asyncio
+
 import logging
 import time
 from asyncio import Lock
@@ -18,7 +18,7 @@ import re
 logging.basicConfig(level=logging.INFO)
 
 storage = MemoryStorage()
-bot = Bot(token="6781746793:AAFUBB_PE7kuic9hTh5DNfXSU7mrN5BMa5A")
+bot = Bot(token="")
 dp = Dispatcher(bot=bot, storage=MemoryStorage())
 
 lock = Lock()
@@ -118,7 +118,7 @@ async def save_password(mes: types.Message, state: FSMContext):
     await States.img.set()
 
 
-def edit_img(img):
+def edit_img(img, id_img):
     orig_img = Image.open(img)
     orig_img.thumbnail(size=(165, 165))
     height, width = orig_img.size
@@ -129,19 +129,21 @@ def edit_img(img):
     np_new = np.array(new_img)
     npImage = np.dstack((npImage, np_new))
     final_img = Image.fromarray(npImage)
-    final_img.save('media/imgs/img1.png', 'png')
-    return 'media/imgs/img1.png'
+    final_img.save(f'media/imgs/{id_img}.png', 'png')
+    return f'media/imgs/{id_img}.png'
 
 
 @dp.message_handler(content_types='photo', state=States.img)
 async def get_img(mes: types.Message, state: FSMContext):
-    await mes.photo[-1].download('media/imgs/img1.png')
+    id_img = mes.photo[-1].file_unique_id
+    await mes.photo[-1].download(f'media/imgs/{id_img}.png')
     time.sleep(1)
-    inp_img = edit_img('media/imgs/img1.png')
+    inp_img = edit_img(f'media/imgs/{id_img}.png', id_img)
     async with lock:
         DataSales.dt_user['img'] = inp_img
     await state.finish()
-    await mes.reply(f'{mes.from_user.first_name}, регистрация на сайте прошла успешно, ваш логин: {DataSales.dt_user["login"]}')
+    await mes.reply(f'{mes.from_user.first_name}, регистрация на сайте прошла успешно, '
+                    f'ваш логин: {DataSales.dt_user["login"]}')
     await mes.answer_photo(InputFile(inp_img), caption='изображение на аватарке')
     session.add(Users(DataSales.dt_user["login"], DataSales.dt_user["password"],
                       DataSales.dt_user["email"], DataSales.dt_user["img"]))
