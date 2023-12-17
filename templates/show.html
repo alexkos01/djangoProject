@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>заметки</title>
+{% endblock %}
+{% block style %}
+    <style>
+        body {
+            background-image: url(https://timeweb.com/media/articles/0001/08/thumb_7309_articles_standart.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        table {
+            background-color: antiquewhite;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            border-radius: 5px;
+        }
+        td {
+            border: 1px solid darkgrey;
+        }
+        .fields {
+            text-align: center;
+            background: grey;
+        }
+        .link_a {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+        .div_add {
+            border: 2px solid;
+            width: 200px;
+        }
+        .div_add:hover {
+            background-color: darkgreen;
+        }
+
+        .div_add:active {
+            background-color: blue;
+        }
+
+        .link_edit {
+            text-decoration: none;
+        }
+
+        .link_edit:hover {
+            color: red;
+        }
+
+        .link_edit:active {
+            color: black;
+        }
+
+        .link_add {
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+        }
+        .div_add {
+            width: 300px;
+            background-color: darkgrey;
+            text-align: center;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40%;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <br>
+    <table>
+        <thead>
+        <tr class="fields">
+            <th>название</th>
+            <th>содержание</th>
+            <th>выбор</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in data %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.content }}</td>
+                <td class="link_a">
+                    <a class="link_edit" href="/edit/{{ i.id }}"><span>изменить</span></a>
+                    <a class="link_edit" href="/delete/{{ i.id }}"><span>удалить</span></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <p class="div_add">
+        <a class="link_add" href="http://127.0.0.1:8000/notes/">новая заметка</a>
+    </p>
+    <p class="div_add">
+        <a class="link_add" href="http://127.0.0.1:8000/user_account/">личный кабинет</a>
+    </p>
+{% endblock %}

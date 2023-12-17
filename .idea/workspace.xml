@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f314d54-094b-4cc2-91d6-97cbe7d5117f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/notes/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/show.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/imgs/img1.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/imgs/img1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles_user_account.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles_user_account.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_account.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +32,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -166,7 +175,20 @@
       <workItem from="1702541598953" duration="15000" />
       <workItem from="1702569286818" duration="2627000" />
       <workItem from="1702576642633" duration="1085000" />
-      <workItem from="1702578689929" duration="715000" />
+      <workItem from="1702578689929" duration="1151000" />
+      <workItem from="1702725929673" duration="20000" />
+      <workItem from="1702758338027" duration="166000" />
+      <workItem from="1702827252829" duration="521000" />
+      <workItem from="1702827862134" duration="63000" />
+      <workItem from="1702827959884" duration="89000" />
+      <workItem from="1702828064237" duration="33000" />
+      <workItem from="1702828114463" duration="37000" />
+      <workItem from="1702828203035" duration="142000" />
+      <workItem from="1702828372974" duration="53000" />
+      <workItem from="1702828445716" duration="168000" />
+      <workItem from="1702828642370" duration="1323000" />
+      <workItem from="1702830085979" duration="7000" />
+      <workItem from="1702830103390" duration="12808000" />
     </task>
     <servers />
   </component>

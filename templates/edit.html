@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>редактор</title>
+{% endblock %}
+{% block style %}
+    <style>
+        body {
+            background-image: url(https://timeweb.com/media/articles/0001/08/thumb_7309_articles_standart.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .main {
+            background-color: antiquewhite;
+            border-radius: 20px;
+            margin-top: 5%;
+            margin-left: 37%;
+            margin-right: 37%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .inp_cont {
+            width: 350px;
+            height: 100px;
+        }
+
+        .inp {
+            margin-top: 30px;
+            padding-bottom: 60px;
+        }
+
+        .btn {
+           background-color: darkgray;
+                border: 2px solid;
+        }
+
+        .btn:hover {
+            background-color: darkgreen;
+        }
+
+        .btn:active {
+            background-color: blue;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <form method="POST" action="/update/{{ data.id }}">
+        {% csrf_token %}
+        <div class="main">
+            <br>
+            <div>
+                <div>
+                    <h3 style="color: red">изменить заметку</h3>
+                </div>
+            </div>
+            <div>
+                <label>название:</label>
+                <div>
+                    <input type="text" name="name" id="id_id" required maxlength="20" value="{{ data.name }}"/>
+                </div>
+            </div>
+            <div>
+                <label>содержание:</label>
+                <div>
+                    <input class="inp_cont" type="text" name="content" id="id_name" required maxlength="300"
+                           value="{{ data.content }}"/>
+                </div>
+            </div>
+
+            <div>
+                <div class="inp">
+                    <input class="btn" type="submit" value="сохранить">
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

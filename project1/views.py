@@ -54,7 +54,8 @@ def authorize(request):
         data = ModelReg.objects.all()
         for i in data:
             if request.POST['email'] == i.email and request.POST['password'] == i.password:
-                return render(request, 'user_account.html', {'user': f'Автозизация прошла успешно'})
+                return render(request, 'user_account.html',
+                              {'user': f'Автозизация прошла успешно', 'login': f'Личный кабинет: {i.login}'})
         return render(request, 'main.html', {'err': 'авторизация не пройдена'})
     return render(request, 'authorize.html')
 
