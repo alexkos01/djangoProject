@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f314d54-094b-4cc2-91d6-97cbe7d5117f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/notes/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e33fdb23-259c-48ca-81cd-3c6193a2d78b/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles_user_account.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles_user_account.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +176,10 @@
       <workItem from="1702828445716" duration="168000" />
       <workItem from="1702828642370" duration="1323000" />
       <workItem from="1702830085979" duration="7000" />
-      <workItem from="1702830103390" duration="12808000" />
+      <workItem from="1702830103390" duration="13006000" />
+      <workItem from="1702844948635" duration="51000" />
+      <workItem from="1702891810613" duration="239000" />
+      <workItem from="1702895090300" duration="1688000" />
     </task>
     <servers />
   </component>

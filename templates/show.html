@@ -13,28 +13,38 @@
         }
 
         table {
+            border-spacing: 0 10px;
             background-color: antiquewhite;
             width: 80%;
             margin-left: 10%;
             margin-right: 10%;
-            border-radius: 5px;
         }
+
         td {
-            border: 1px solid darkgrey;
+            padding: 10px;
+            font-size: 14px;
+            border-top: 2px solid #56433D;
+            border-bottom: 2px solid #56433D;
+            border-right: 2px solid #56433D;
         }
+
+        th {
+            padding: 10px 20px;
+            background: #56433D;
+            color: #F9C941;
+            border-right: 2px solid;
+            font-size: 0.9em;
+        }
+
         .fields {
             text-align: center;
             background: grey;
-        }
-        .link_a {
-            display: flex;
-            text-align: center;
-            flex-direction: column;
         }
         .div_add {
             border: 2px solid;
             width: 200px;
         }
+
         .div_add:hover {
             background-color: darkgreen;
         }
@@ -60,6 +70,7 @@
             color: black;
             text-decoration: none;
         }
+
         .div_add {
             width: 300px;
             background-color: darkgrey;
@@ -88,7 +99,7 @@
                 <td>{{ i.name }}</td>
                 <td>{{ i.content }}</td>
                 <td class="link_a">
-                    <a class="link_edit" href="/edit/{{ i.id }}"><span>изменить</span></a>
+                    <a class="link_edit" href="/edit/{{ i.id }}"><span>изменить</span></a><br>
                     <a class="link_edit" href="/delete/{{ i.id }}"><span>удалить</span></a>
                 </td>
             </tr>
